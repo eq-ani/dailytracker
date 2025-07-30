@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware  # For frontend connection la
 from app.routers import habits
 from app.database import engine
 from app.models import habit
+from app.auth import router as auth_router
 
 # Create all database tables (optional safety net - Alembic should handle this)
 habit.Base.metadata.create_all(bind=engine)
@@ -24,6 +25,7 @@ app.add_middleware(
 )
 
 # Include routers
+app.include_router(auth_router, prefix="/api/auth")
 app.include_router(habits.router, prefix="/api")
 
 # Health check endpoint
