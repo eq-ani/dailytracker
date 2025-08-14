@@ -1,0 +1,18 @@
+# .env files
+.env
+.env.local
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Database files
+*.sqlite
+*.db
+
+# IDE files (optional but recommended)
+.idea/
+.vscode/
